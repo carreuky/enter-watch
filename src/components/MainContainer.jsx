@@ -1,9 +1,21 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import Trending from "./Trending";
 
 export default function MainContainer() {
+const [data,SetData]=useState([])
+  useEffect(() => {
+    fetch("http://localhost:3000/shows").then((r) => {
+      if (r.ok) {
+        r.json().then((data) => {
+          SetData(data);
+        });
+      }
+    });
+  }, []);
+
+  
   return (
-    <div className="md:mx-4 text-white  ">
+    <div className="md:mx-8 text-white  ">
       <form className="flex grow pb-6 md:pb-4 lg:mt-9  ">
         <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -17,7 +29,7 @@ export default function MainContainer() {
           placeholder="Search for movies or TV series"
         />
       </form>
-      <Trending/>
+      <Trending data={data}/>
     </div>
   );
 }

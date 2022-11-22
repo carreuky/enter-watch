@@ -1,100 +1,49 @@
-import React from "react";
+import React,{useState} from "react";
 
-export default function TrendingCrad() {
+export default function TrendingCrad({ data }) {
+  console.log(data);
+  const [addedToList, setAddedToList] = useState(false);
+  const result = data.filter(data => data.isTrending === true);
+   console.log(result)
+
   return (
-    <div class="flex mt-4">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
-        <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
-          <img
-            class="object-cover w-full h-48"
-            src="https://images.unsplash.com/photo-1502581827181-9cf3c3ee0106?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=420&q=80"
-            alt="Flower and sky"
-          />
-
-          <div class="absolute top-0 left-0 px-6 py-4">
-            <h4 class="mb-3 text-xl font-semibold tracking-tight text-white">
-              This is the title
-            </h4>
-            <p class="leading-normal text-gray-100">
-              Lorem ipsum dolor, sit amet cons ectetur adipis icing elit.
-              Praesen tium, quibusdam facere quo laborum maiores sequi nam
-              tenetur laud.
-            </p>
+    <div
+            id="scrollContainer"
+            class="flex flex-no-wrap overflow-x-scroll scrolling-touch items-start mb-8 gap-8"
+          >
+        {result.map((show) => (
+          <div class="flex h-48  flex-col w-full max-w-sm mx-auto">
+          {/* <div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style={{backgroundImage:`url(${show.thumbnail.trending.large})`}}></div> */}
+      
+          <div class="w-[380px] mt-6 overflow-hidden bg-cover bg-center bg-white rounded-lg shadow-lg " style={{backgroundImage:`url(${show.thumbnail.trending.large})`}}>
+              <div className="box-border sm:w-[117px] sm:min-h-[48px] mx-auto sm:mt-[40px] mt-0 min-h-[40px] w-[100px] cursor-pointer flex gap-3 opacity-0 hover:opacity-100 hover:bg-opacity-30 rounded-3xl bg-white justify-center items-center">
+                    <div>
+                        <img src="/assets/icon-play.svg" alt=""/>
+                    </div>
+                    <span>Play</span>
+                </div>
+                <div className="flex flex-col mb-0 h-full  pl-3">
+                    <div className="flex mb-0">
+                        <p className="text-[12px] mr-3">{show.year}</p>
+                        <div className="flex w-3 h-3">
+                            <img 
+                                src={show.category==='Movie' 
+                                ? "/assets/icon-category-movie.svg"
+                                : "/assets/icon-category-tv.svg"
+                                } 
+                                alt=""
+                            />
+                        </div>
+                        <p className="text-[12px] pb-0 mx-3">{show.category}</p>   
+                        <p className="text-[12px] pb-0">{show.rating}</p>  
+                    </div>
+                    <p className="text-[14px] md:text-[18px]">{show.title}</p>   
+                </div>
+              
           </div>
-        </div>
-        <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
-          <img
-            class="object-cover w-full h-48"
-            src="https://images.unsplash.com/photo-1502581827181-9cf3c3ee0106?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=420&q=80"
-            alt="Flower and sky"
-          />
-
-          <div class="absolute top-0 left-0 px-6 py-4">
-            <h4 class="mb-3 text-xl font-semibold tracking-tight text-white">
-              This is the title
-            </h4>
-            <p class="leading-normal text-gray-100">
-              Lorem ipsum dolor, sit amet cons ectetur adipis icing elit.
-              Praesen tium, quibusdam facere quo laborum maiores sequi nam
-              tenetur laud.
-            </p>
-          </div>
-        </div>
-        <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
-          <img
-            class="object-cover w-full h-48"
-            src="https://images.unsplash.com/photo-1502581827181-9cf3c3ee0106?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=420&q=80"
-            alt="Flower and sky"
-          />
-
-          <div class="absolute top-0 left-0 px-6 py-4">
-            <h4 class="mb-3 text-xl font-semibold tracking-tight text-white">
-              This is the title
-            </h4>
-            <p class="leading-normal text-gray-100">
-              Lorem ipsum dolor, sit amet cons ectetur adipis icing elit.
-              Praesen tium, quibusdam facere quo laborum maiores sequi nam
-              tenetur laud.
-            </p>
-          </div>
-        </div>
-        <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
-          <img
-            class="object-cover w-full h-48"
-            src="https://images.unsplash.com/photo-1502581827181-9cf3c3ee0106?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=420&q=80"
-            alt="Flower and sky"
-          />
-
-          <div class="absolute top-0 left-0 px-6 py-4">
-            <h4 class="mb-3 text-xl font-semibold tracking-tight text-white">
-              This is the title
-            </h4>
-            <p class="leading-normal text-gray-100">
-              Lorem ipsum dolor, sit amet cons ectetur adipis icing elit.
-              Praesen tium, quibusdam facere quo laborum maiores sequi nam
-              tenetur laud.
-            </p>
-          </div>
-        </div>
-        <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
-          <img
-            class="object-cover w-full h-48"
-            src="https://images.unsplash.com/photo-1502581827181-9cf3c3ee0106?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=420&q=80"
-            alt="Flower and sky"
-          />
-
-          <div class="absolute top-0 left-0 px-6 py-4">
-            <h4 class="mb-3 text-xl font-semibold tracking-tight text-white">
-              This is the title
-            </h4>
-            <p class="leading-normal text-gray-100">
-              Lorem ipsum dolor, sit amet cons ectetur adipis icing elit.
-              Praesen tium, quibusdam facere quo laborum maiores sequi nam
-              tenetur laud.
-            </p>
-          </div>
-        </div>
+         
       </div>
+        ))}
     </div>
   );
 }
