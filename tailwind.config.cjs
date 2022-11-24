@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+        'playfair':['Playfair Display', 'serif']
+      },
     },
   },
   plugins: [require('tailwind-scrollbar-hide')],

@@ -1,10 +1,8 @@
 import React,{useState} from "react";
 
 export default function TrendingCrad({ data }) {
-  console.log(data);
-  const [addedToList, setAddedToList] = useState(false);
+    
   const result = data.filter(data => data.isTrending === true);
-   console.log(result)
 
   return (
     <div
