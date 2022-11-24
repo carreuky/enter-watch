@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from "react";
+import Recommend from "./Recommend";
 import Trending from "./Trending";
 
 export default function MainContainer() {
@@ -30,6 +31,7 @@ const [data,SetData]=useState([])
         />
       </form>
       <Trending data={data}/>
+      <Recommend data={data} />
     </div>
   );
 }
