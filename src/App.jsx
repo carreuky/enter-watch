@@ -4,6 +4,7 @@ import './App.css'
 import MainContainer from './components/MainContainer';
 import Movies from './components/Movies';
 import Sidebar from './components/Sidebar'
+import Series from "./components/Series";
 
 function App() {
   const [data,SetData]=useState([])
@@ -24,6 +25,7 @@ function App() {
       <Routes>
       <Route path="/" element={<MainContainer data={data}/>} />
       <Route path="/movies" element={<Movies data={data}/>} />
+      <Route path="/tv" element={<Series data={data}/>} />
 
       </Routes>
     </BrowserRouter>

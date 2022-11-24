@@ -30,7 +30,7 @@ export default function Sidebar() {
 
         <Link to='/movies'>
           <svg
-            className="fill-[#5A698F] hover:fill-[#FC4747]"
+            className="fill-[#5A698F] active:fill-[#FC4747]"
             width="20"
             height="20"
             xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@ export default function Sidebar() {
 
         <Link to='/tv'>
           <svg
-            className="fill-[#5A698F] hover:fill-[#FC4747]"
+            className="fill-[#5A698F] active:fill-[#FC4747]"
             width="20"
             height="20"
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ export default function Sidebar() {
 
         <Link to='/bookmarks'>
           <svg
-            className="fill-[#5A698F] hover:fill-[#FC4747]"
+            className="fill-[#5A698F] active:fill-[#FC4747]"
             width="17"
             height="20"
             xmlns="http://www.w3.org/2000/svg"

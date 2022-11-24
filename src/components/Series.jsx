@@ -1,8 +1,8 @@
 import React from 'react'
 import RecommendCard from './RecommendCard';
 
-export default function Movies ({data}) {
-    const result = data.filter(data => data.category === 'Movie');
+export default function Series({data}) {
+    const result = data.filter(data => data.category === 'TV Series');
 
     return (
         <div className="font-poppins md:mx-8 text-white  ">
@@ -21,10 +21,9 @@ export default function Movies ({data}) {
             </form>
 
             <div className="flex flex-wrap gap-4 mt-3 cursor-pointer">
-        {result.map((show) => (
-          <RecommendCard show={show}/>
-        ))}
-      </div>
-        </div>
-    )
+                {result.map((show) => (
+                    <RecommendCard show={show} />
+                ))}
+            </div>
+        </div>)
 }
