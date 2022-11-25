@@ -9,7 +9,7 @@ import Series from "./components/Series";
 function App() {
   const [data,SetData]=useState([])
   useEffect(() => {
-    fetch("http://localhost:3000/shows").then((r) => {
+    fetch("https://carreuky.github.io/data/shows.json").then((r) => {
       if (r.ok) {
         r.json().then((data) => {
           SetData(data);
