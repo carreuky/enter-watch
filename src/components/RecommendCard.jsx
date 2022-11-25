@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function RecommendCard({show}) {
+  
   return (
 <div className="rounded-md ">
             <img
@@ -8,7 +9,7 @@ export default function RecommendCard({show}) {
               alt={show.title}
               layout="responsive"
               objectFit="cover"
-              className="rounded-lg w-[362px] h-[200px]"
+              className="rounded-lg lg:w-[362px] h-[200px] md:w-[280px]"
             />
             {/* <div className="px-4 py-2 box-border sm:w-[117px] sm:min-h-[48px] mx-auto sm:mt-[40px] mt-0 min-h-[40px] w-[100px] cursor-pointer flex gap-3 opacity-0 hover:opacity-100 hover:bg-opacity-30 rounded-3xl bg-white justify-center items-center">
             <div>

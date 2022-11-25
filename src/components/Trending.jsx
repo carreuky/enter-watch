@@ -1,10 +1,10 @@
 import React from 'react'
 import TrendingCrad from './TrendingCrad'
 
-export default function Trending({data}) {
+export default function Trending({data,inputText}) {
   return (
-    <div><h1 className='text-4xl '>Trending</h1>
-    <TrendingCrad data={data}/>
+    <div>
+    <TrendingCrad data={data} inputText={inputText}/>
     </div>
   )
 }

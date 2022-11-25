@@ -8,6 +8,10 @@ import Series from "./components/Series";
 
 function App() {
   const [data,SetData]=useState([])
+  const [inputText, setInputText] = useState("");
+
+  console.log(inputText)
+
   useEffect(() => {
     fetch("https://carreuky.github.io/data/shows.json").then((r) => {
       if (r.ok) {
@@ -18,14 +22,16 @@ function App() {
     });
   }, []);
 
+
+
   return (
     <div className="bg-dark lg:ml-24 lg:mr-4 lg:mt-8  font-sans">
       <BrowserRouter>
       <Sidebar/>
       <Routes>
-      <Route path="/" element={<MainContainer data={data}/>} />
-      <Route path="/movies" element={<Movies data={data}/>} />
-      <Route path="/tv" element={<Series data={data}/>} />
+      <Route path="/" element={<MainContainer data={data} inputText={inputText} setInputText={setInputText}/>} />
+      <Route path="/movies" element={<Movies data={data} inputText={inputText} setInputText={setInputText} />} />
+      <Route path="/tv" element={<Series data={data} inputText={inputText} setInputText={setInputText}/>} />
 
       </Routes>
     </BrowserRouter>
