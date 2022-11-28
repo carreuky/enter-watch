@@ -12,8 +12,8 @@ export default function Recommend({ data,inputText}) {
 })
   return (
     <div>
-      <h1 className="text-4xl my-4">{filteredData.length === 0 ?'':'Recommended for you.' }</h1>
-      <div className="flex flex-wrap gap-4">
+      <h1 className="text-4xl lg:my-4 my-2">{filteredData.length === 0 ?'':'Recommended for you.' }</h1>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3  gap-4">
         {filteredData.map((show) => (
           <RecommendCard show={show}/>
         ))}
